@@ -8,12 +8,12 @@ document.getElementById("runCode").addEventListener("click", async () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          language: "java", // Language of the code
-          version: "latest", // Use the latest version of the language
+          language: "java", // Language
+          version: "17.0.8", // Specify the correct version
           files: [
             {
-              name: "Main.java", // File name (required by the API)
-              content: code, // Code content from the textarea
+              name: "Main.java",
+              content: code, // Code content from textarea
             },
           ],
         }),
