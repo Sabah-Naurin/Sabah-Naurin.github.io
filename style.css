@@ -1,33 +1,136 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-  }
-  
-  textarea {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  pre {
-    background-color: #f4f4f4;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background-color: #f3f5f9;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 250px;
+  height: 100%;
+  background: #000;
+  padding: 30px 0px;
+  position: fixed;
+  overflow: auto;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.wrapper .sidebar ul li .dropdown_menu {
+    display: none;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: left;
-    white-space: pre-wrap;
-  }
-  
+    
+}
+
+.wrapper .sidebar ul li .dropdown_menu li {
+    padding: 15px;
+    border-bottom: none; /* Remove borders for dropdown items */
+}
+
+.wrapper .sidebar ul li .dropdown_menu li a {
+    color: #bdb8d7;
+}
+
+.wrapper .sidebar ul li:hover .dropdown_menu {
+    display: block; /* Show the dropdown menu on hover */
+}
+
+.wrapper .sidebar ul li .dropdown_menu li:hover a {
+    color: #fff; /* Change text color on hover */
+}
+
+.wrapper .sidebar ul li a .dropdown_icon {
+    float: right; /* Align the caret to the right of the menu item */
+    font-size: 18px; /* Adjust size of the icon */
+    margin-right: 10px; /* Add spacing between the icon and the edge */
+    transition: transform 0.3s ease; /* Add a smooth rotation animation */
+}
+
+
+.wrapper .sidebar ul li:hover{
+  background-color: #7d777717;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 250px;
+}
+
+.wrapper .main_content .header {
+    padding: 20px; 
+    background: #000; 
+    color: #fff;
+    border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+
+/* Authentication Section */
+.auth_section {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.auth_section a {
+    display: block;
+    color: #bdb8d7;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.auth_section a:hover {
+    color: #fff;
+}
+
+.auth_section #user-info {
+    color: #bdb8d7;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

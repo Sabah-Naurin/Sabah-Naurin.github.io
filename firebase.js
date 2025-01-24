@@ -8,7 +8,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDckLliAb4jgAxkf-6q1blcWU6WzQTGdsE",
   authDomain: "loopdeoop.firebaseapp.com",
   projectId: "loopdeoop",
-  storageBucket: "loopdeoop.appspot.com", // Corrected URL (ends with .appspot.com)
+  storageBucket: "loopdeoop.appspot.com",
   messagingSenderId: "383196216983",
   appId: "1:383196216983:web:9f8f2adff0a2c3f12473d2"
 };
