@@ -9,6 +9,21 @@ body {
     height: 100vh;
 }
 
+.go-back {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.go-back a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.go-back a:hover {
+    text-decoration: underline;
+}
+
+
 .signup-container {
     width: 100%;
     max-width: 400px;
