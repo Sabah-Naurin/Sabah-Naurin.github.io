@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="sidebar">
-                <h2>LoopDeOOP</h2>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#">Java
-                        <i class="fa fa-caret-down dropdown_icon" aria-hidden="true"></i></a>
-                        <ul class="dropdown_menu">
-                            <li><a href="problem.html">Introduction</a></li>
-                            <li><a href="#">Advanced Topics</a></li>
-                            <li><a href="#">Examples</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">JavaFX</a></li>
-                    <li><a href="#">Setup</a></li>
-                    <li><a href="#">Past Questions</a></li>
-                    <li><a href="#">Sample Projects</a></li>
-                    
-                </ul>
-                <div class="auth_section">
-                    <div id="auth-options">
-                        <!-- Login/Signup for unauthenticated users -->
-                        <a href="login.html" id="login"><i class="fa fa-sign-in"></i> Login</a>
-                        <a href="signup.html" id="signup"><i class="fa fa-user-plus"></i> Signup</a>
-    
-                        <!-- Username/Logout for authenticated users -->
-                        <div id="user-info" style="display: none;">
-                            <span id="username"><i class="fa fa-user-circle"></i> Username</span>
-                            <a href="#" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
-                        </div>
-                    </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LoopDeOOP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>LoopDeOOP</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Java
+                        <i class="fa fa-caret-down dropdown_icon" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown_menu">
+                        <li><a href="problem.html">Introduction</a></li>
+                        <li><a href="#">Advanced Topics</a></li>
+                        <li><a href="#">Examples</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">JavaFX</a></li>
+                <li><a href="#">Setup</a></li>
+                <li><a href="#">Past Questions</a></li>
+                <li><a href="#">Sample Projects</a></li>
+                
+            </ul>
+            <!-- Authentication Section -->
+            <div class="auth-section">
+                <!-- For unauthenticated users -->
+                <a href="#" id="login"><i class="fa fa-sign-in"></i> Login</a>
+                <a href="#" id="signup"><i class="fa fa-user-plus"></i> Signup</a>
+
+                <!-- For authenticated users -->
+                <div id="user-info" style="display: none;">
+                    <span id="username"><i class="fa fa-user-circle"></i> Username</span>
+                    <a href="#" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
                 </div>
             </div>
-            <div class="main_content">
-                <!--<div class="header">BBBootstrap.com welcomes you!</div>  -->
-                <div class="info">
-              </div>
+        </div>
+        <div class="main_content">
+            <div class="info">
             </div>
         </div>
-        <script type="module" src="sidebar.js"></script>
-    </body>
+    </div>
+    <script type="module" src="sidebar.js"></script>
+</body>
 </html>

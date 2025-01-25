@@ -1,55 +1,59 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  font-family: 'Josefin Sans', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-body{
-   background-color: #f3f5f9;
+body {
+    background-color: #f3f5f9;
 }
 
-.wrapper{
-  display: flex;
-  position: relative;
+.wrapper {
+    display: flex;
+    position: relative;
 }
 
-.wrapper .sidebar{
-  width: 250px;
-  height: 100%;
-  background: #000;
-  padding: 30px 0px;
-  position: fixed;
-  overflow: auto;
+.wrapper .sidebar {
+    width: 250px;
+    height: 100vh; /* Full height of the viewport */
+    background: #000;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
-.wrapper .sidebar h2{
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 30px;
+.wrapper .sidebar h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
 }
 
-.wrapper .sidebar ul li{
-  padding: 15px;
-  border-bottom: 1px solid #bdb8d7;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  border-top: 1px solid rgba(255,255,255,0.05);
-}    
+.wrapper .sidebar ul {
+    flex: 1; /* Allow the menu to take up available space */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
 
-.wrapper .sidebar ul li a{
-  color: #bdb8d7;
-  display: block;
+.wrapper .sidebar ul li {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.wrapper .sidebar ul li a {
+    color: #bdb8d7;
+    display: block;
 }
 
 .wrapper .sidebar ul li .dropdown_menu {
     display: none;
     padding: 10px;
-    
 }
 
 .wrapper .sidebar ul li .dropdown_menu li {
@@ -76,58 +80,48 @@ body{
     transition: transform 0.3s ease; /* Add a smooth rotation animation */
 }
 
-
-.wrapper .sidebar ul li:hover{
-  background-color: #7d777717;
-}
-    
-.wrapper .sidebar ul li:hover a{
-  color: #fff;
+.wrapper .sidebar ul li:hover {
+    background-color: #7d777717;
 }
 
-.wrapper .main_content{
-  width: 100%;
-  margin-left: 250px;
-}
-
-.wrapper .main_content .header {
-    padding: 20px; 
-    background: #000; 
+.wrapper .sidebar ul li:hover a {
     color: #fff;
-    border-bottom: 1px solid #e0e4e8;
 }
 
-.wrapper .main_content .info{
-  margin: 20px;
-  color: #717171;
-  line-height: 25px;
+.wrapper .main_content {
+    width: 100%;
+    margin-left: 250px; /* Account for the sidebar width */
 }
 
-.wrapper .main_content .info div{
-  margin-bottom: 20px;
+.wrapper .main_content .info {
+    margin: 20px;
+    color: #717171;
+    line-height: 25px;
 }
 
 /* Authentication Section */
-.auth_section {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
+.auth-section {
+    position: sticky; /* Sticks to the bottom of the sidebar */
+    bottom: 0; /* Align it to the bottom */
     text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: #000; /* Match sidebar background */
 }
 
-.auth_section a {
+.auth-section a {
     display: block;
     color: #bdb8d7;
     padding: 10px 0;
     text-decoration: none;
+    font-size: 1rem;
 }
 
-.auth_section a:hover {
+.auth-section a:hover {
     color: #fff;
 }
 
-.auth_section #user-info {
+.auth-section #user-info {
     color: #bdb8d7;
     padding: 10px 0;
     display: flex;
