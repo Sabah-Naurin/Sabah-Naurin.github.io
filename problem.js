@@ -1,17 +1,21 @@
-// Initialize CodeMirror
+// Initialize CodeMirror with default code
 const editor = CodeMirror(document.getElementById("editor"), {
-    value: `// Write your Java Code below
-    public class Main {
-        public static void main(String[] args) {
-            System.out.println("Hello world!");
-        }
-    }`,
+    value: `public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
+}`,
     mode: "text/x-java", // Enable Java syntax highlighting
     lineNumbers: true,   // Show line numbers
     theme: "default",    // Use a basic theme
     matchBrackets: true, // Highlight matching brackets
     autoCloseBrackets: true, // Automatically close brackets
     readOnly: false, // Ensure the editor is editable
+});
+
+// Add event listener to the Go Back button
+document.getElementById("go-back").addEventListener("click", () => {
+    window.location.href = "index.html"; // Navigate to the index page
 });
 
 // Define test cases for validation
