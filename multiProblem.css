@@ -1,0 +1,49 @@
+/* Style CodeMirror editors */
+.CodeMirror {
+    height: 400px; /* Ensure the editor has a fixed height */
+    width: 100%; /* Ensure it stretches to the container's width */
+    border: 1px solid #ddd; /* Add a border for better visual distinction */
+    border-radius: 5px; /* Smooth edges */
+    font-size: 14px; /* Consistent font size */
+    overflow: hidden; /* Prevent text overflow */
+}
+
+/* Ensure the editor container fits well */
+.editor {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.problem-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.go-back-btn {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#result-message {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Modal adjustments */
+#addFileModal .modal-content {
+    border-radius: 8px;
+}
