@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 }`);
 });
 
+// Add event listener to the Go Back button
+document.getElementById("go-back").addEventListener("click", () => {
+    window.location.href = "index.html"; // Navigate to the index page
+});
+
 // Trigger the modal for adding a new file
 document.getElementById("add-file-btn").addEventListener("click", () => {
     const addFileModal = new bootstrap.Modal(document.getElementById("addFileModal"));
