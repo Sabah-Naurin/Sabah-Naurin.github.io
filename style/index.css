@@ -1,130 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Josefin Sans', sans-serif;
+header {
+  background-color: #8e94f2;
 }
 
 body {
-    background-color: #f3f5f9;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.wrapper {
-    display: flex;
-    position: relative;
-}
-
-.wrapper .sidebar {
-    width: 250px;
-    height: 100vh; /* Full height of the viewport */
-    background: #000;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper .sidebar h2 {
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 20px;
-}
-
-.wrapper .sidebar ul {
-    flex: 1; /* Allow the menu to take up available space */
-    overflow-y: auto; /* Enable scrolling if content overflows */
-}
-
-.wrapper .sidebar ul li {
-    padding: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.wrapper .sidebar ul li a {
-    color: #bdb8d7;
-    display: block;
-}
-
-.wrapper .sidebar ul li .dropdown_menu {
-    display: none;
-    padding: 10px;
-}
-
-.wrapper .sidebar ul li .dropdown_menu li {
-    padding: 15px;
-    border-bottom: none; /* Remove borders for dropdown items */
-}
-
-.wrapper .sidebar ul li .dropdown_menu li a {
-    color: #bdb8d7;
-}
-
-.wrapper .sidebar ul li:hover .dropdown_menu {
-    display: block; /* Show the dropdown menu on hover */
-}
-
-.wrapper .sidebar ul li .dropdown_menu li:hover a {
-    color: #fff; /* Change text color on hover */
-}
-
-.wrapper .sidebar ul li a .dropdown_icon {
-    float: right; /* Align the caret to the right of the menu item */
-    font-size: 18px; /* Adjust size of the icon */
-    margin-right: 10px; /* Add spacing between the icon and the edge */
-    transition: transform 0.3s ease; /* Add a smooth rotation animation */
-}
-
-.wrapper .sidebar ul li:hover {
-    background-color: #7d777717;
-}
-
-.wrapper .sidebar ul li:hover a {
-    color: #fff;
-}
-
-.wrapper .main_content {
-    width: 100%;
-    margin-left: 250px; /* Account for the sidebar width */
-}
-
-.wrapper .main_content .info {
-    margin: 20px;
-    color: #717171;
-    line-height: 25px;
-}
-
-/* Authentication Section */
-.auth-section {
-    position: sticky; /* Sticks to the bottom of the sidebar */
-    bottom: 0; /* Align it to the bottom */
-    text-align: center;
-    padding: 15px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    background: #000; /* Match sidebar background */
-}
-
-.auth-section a {
-    display: block;
-    color: #bdb8d7;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.auth-section a:hover {
-    color: #fff;
-}
-
-.auth-section #user-info {
-    color: #bdb8d7;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
 }

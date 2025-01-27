@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopDeOOP</title>
+
+    <link rel="stylesheet" href="style/sidebar.css">
+    <link rel="stylesheet" href="style/boilerplate.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 bg-light sidebar py-3">
+        <h4 class="px-3" id="WebsiteTitle">LoopDeOOP</h4>
+        <ul class="nav flex-column px-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" id="home">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#dropdownMenu" aria-expanded="false">
+              Java
+            </a>
+            <ul class="collapse show" id="dropdownMenu">
+              <li><a class="nav-link active" href="boilerplate.html" id="boilerplate">Start Here</a></li>
+              <li><a class="nav-link" href="variable.html" id="variable">Datatypes & Variables</a></li>
+              <li><a class="nav-link" href="loops.html" id="loops">Control Flow statements</a></li>
+              <li><a class="nav-link" href="methods.html" id="methods">Methods</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#" id="javafx">JavaFX</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="setup">Setup</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="java">Past Questions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="projects">Sample Projects</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Main Section -->
+      <main class="col-md-9 col-lg-10 main-content">
+        
+        <!-- Header -->
+        <header class="text-white py-3 px-4 d-flex justify-content-between align-items-center">
+          <h1>Introduction to Java</h1>
+          <div>
+            <button class="btn btn-light mx-1">Login</button>
+            <button class="btn btn-light mx-1">Sign Up</button>
+          </div>
+        </header>
+        
+        <!-- Content -->
+        <div class="p-4">
+            <div class="container my-4">
+                <p>Java programs might seem scary at first, especially if you’re used to Python, where you can do a lot with just one or two lines. But once you get the hang of Java’s structure, it’s pretty simple! Think of it like a recipe where every step has to be written clearly.</p>
+                <hr>
+                <h3>The Structure of a Java Program</h3>
+                <p>Every Java program starts with a <strong>class</strong>. The file name should match the class name (case-sensitive) and have the .java extension.</p>
+                <h5><strong>How a Basic Java Program Looks</strong></h5>
+                <p>Here’s the simplest Java program that prints "Hello, World!" to the screen (And corresponding Python code):</p>
+                
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button class="nav-link active" id="nav-java-tab" data-bs-toggle="tab" data-bs-target="#nav-java" type="button" role="tab" aria-controls="nav-java" aria-selected="true">Java</button>
+                      <button class="nav-link" id="nav-python-tab" data-bs-toggle="tab" data-bs-target="#nav-python" type="button" role="tab" aria-controls="nav-python" aria-selected="false">Python</button>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <!-- Java Tab -->
+                    <div class="tab-pane fade show active" id="nav-java" role="tabpanel" aria-labelledby="nav-java-tab">
+                      <pre><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                      </code></pre>
+                    </div>
+                    <!-- Python Tab -->
+                    <div class="tab-pane fade" id="nav-python" role="tabpanel" aria-labelledby="nav-python-tab">
+                      <pre><code class="language-python">
+print("Hello, World!")
+                      </code></pre>
+                    </div>
+
+                    <pre><code>Hello, World!</code></pre>
+                <br>
+                    <hr>
+                <h3>Let’s Break It Down</h3>
+                
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th class="th1"><code class="language-java">Public class Main { ... }</code></th>
+                      <td>Declares a class named Main. The file must be saved as <code>Main.java</code>.
+                        <br>Every Java program starts with a <span class="text-danger">class.</span> The class name <strong>must</strong> match the filename (e.g., <code class="language-java">Main.java</code>).</td>
+                    </tr>
+                    <tr>
+                      <th  class="th1"><code class="language-java">public static void main(String[] args)</code></th>
+                      <td>
+                        This is the main method, the <span class="text-danger">entry point</span> of your program. Java starts executing here. Each keyword has a specific purpose:
+                        <ul>
+                          <li><strong>public:</strong> Accessible by other parts of the program.</li>
+                          <li><strong>static:</strong> You don’t need an object to run this method.</li>
+                          <li><strong>void:</strong> This method doesn’t return a value.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th  class="th1"><code class="language-java">{ ... }</code></th>
+                      <td>Curly braces group blocks of code. Every class and method must have them.</td>
+                    </tr>
+                    <tr>
+                      <th  class="th1"><code class="language-java">System.out.println("Hello, World!");</code></th>
+                      <td>Prints the text "Hello, World!" to the console and moves to the next line. <br><span class="text-danger">Don’t forget the semicolon!</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <hr>
+
+
+                <h3>Java Programs Are Always in a Class</h3>
+                <p>In Java, everything must be inside a <span class="text-danger">class</span>. This is one of the biggest differences between Java and Python. Even for the simplest program, you must define a class to organize your code.</p>
+                <p>In Java, you can’t write code outside a class. In Python, you don’t need to use a class unless your program requires object-oriented features. </p>
+
+                <h6><strong>Example: Adding Two Numbers</strong></h6><br>
+
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab2" role="tablist">
+                    <button class="nav-link active" id="nav-java-tab2" data-bs-toggle="tab" data-bs-target="#nav-java2" type="button" role="tab" aria-controls="nav-java2" aria-selected="true">Java (Everything in a Class)</button>
+                    <button class="nav-link" id="nav-python-tab2" data-bs-toggle="tab" data-bs-target="#nav-python2" type="button" role="tab" aria-controls="nav-python2" aria-selected="false">Python (Code Can Exist Without a Class)</button>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent2">
+                  <!-- Java Tab -->
+                  <div class="tab-pane fade show active" id="nav-java2" role="tabpane2" aria-labelledby="nav-java-tab2">
+                    <pre><code class="language-java">
+public class Main {
+  public static void main(String[] args) {
+      int a = 5;
+      int b = 10;
+      System.out.println("Sum: " + (a + b));
+  }
+}
+                    </code></pre>
+                  </div>
+                  <!-- Python Tab -->
+                  <div class="tab-pane fade" id="nav-python2" role="tabpane2" aria-labelledby="nav-python-tab2">
+                    <pre><code class="language-python">
+a = 5
+b = 10
+print("Sum:", a + b)
+                    </code></pre>
+                  </div>
+                  <pre><code>Sum: 15</code></pre><br>
+
+                <h5>Why Does Java Require Classes?</h5>
+                <p>Java is designed to be a <strong>pure object-oriented language.</strong></p>
+                <ul>
+                  <li>Classes help organize and structure code.</li>
+                  <li>They make Java programs scalable and maintainable, especially for large projects.</li>
+                  <li>While it may seem like extra work for small programs, this structure becomes very useful in complex applications.</li>
+                </ul>
+                <hr>
+
+                <h3>File Name and Class Name Match</h3>
+                <p>In Java, the file name must match the public class name exactly (including capitalization). This rule applies only to the class marked as public. If you violate this rule, Java will throw a compilation error.</p>
+                <p><strong>Example:</strong></p>
+                <p>If your class is named Main, the file must be saved as Main.java:</p>
+                <pre><code class="language-java">
+public class Main {  // The public class is named Main
+  public static void main(String[] args) {
+      System.out.println("File name matches the class name.");
+  }
+}
+                </code></pre>
+                <div class="alert alert-info-callout" role="alert">
+                  <h5>What Happens if the File Name Doesn’t Match?</h5>
+                    <p>If you save the above code as Example.java, Java will throw an error like:</p>
+                    <code class="language-java">Error: class Main is public, should be declared in a file named Main.java</code>
+
+                </div>                
+                <hr>
+
+
+                <h3>Case Sensitivity</h3>
+                <p>Java is a case-sensitive language, which means that identifiers (like variable names, method names, and class names) must match exactly in terms of uppercase and lowercase letters. Even a small difference in capitalization will lead to an error.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code class="language-java">
+public class Main {
+  public static void main(String[] args) {
+      int Number = 10;  // an interger variable 'Number' with uppercase N and a value of 10
+      int number = 20;  // an interger variable 'number' with lowercase n and a value of 20
+
+      System.out.println(Number);  // Outputs: 10
+      System.out.println(number);  // Outputs: 20
+  }
+}
+                </code></pre>
+                <div class="alert alert-info-callout" role="alert">
+                  <h5>Common Mistake:</h5>
+                  <pre><code class="language-java">
+System.out.println("Hello"); // Correct
+system.out.println("Hello"); // Incorrect: "system" must be "System"
+                  </code></pre>
+
+                </div>
+                <hr>
+
+
+                <h3>Curly Braces ({})</h3>
+                <p>Curly braces are used to define blocks of code in Java. Every class, method, and control statement (like loops and if statements) must be enclosed in curly braces. This ensures that Java knows where the block of code starts and ends.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code class="language-java">
+public class Main {  // Open curly brace for class
+  public static void main(String[] args) {  // Open curly brace for main method
+      System.out.println("Hello, World!"); // Statement inside method
+  }  // Close curly brace for main method
+}  // Close curly brace for class
+                </code></pre>
+                <hr>
+
+
+                <h3>Semicolons (;)</h3>
+                <p>In Java, every statement must end with a <span class="text-danger">semicolon (;)</span>. This rule applies to executable statements, like method calls, variable declarations, and return statements.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code class="language-java">
+public class SemicolonExample {
+  public static void main(String[] args) {
+      int number = 10;  // Correct: Ends with a semicolon
+      System.out.println("The number is " + number);  // Correct
+
+      // Uncommenting the next line will cause a syntax error because the semicolon is missing
+      // System.out.println("This will cause an error")
+  }
+}
+                </code></pre>
+                <div class="alert alert-info-callout" role="alert">Forgetting a semicolon is a very common mistake for beginners.</div>
+                <hr>
+
+
+                <h3>What Does <code class="language-java">System.out.println("")</code> Do?</h3>
+                <p><code class="language-java">System.out.println("")</code> is Java’s way of <strong>printing messages</strong> to the console.</p>
+                <ul>
+                  <li><code>System</code>: A built-in Java class that provides tools.</li>
+                  <li><code>out</code>: A tool inside System used to send output.</li>
+                  <li><code>println</code>: Stands for print line, which prints the message and moves to the next line.</li>
+                </ul>
+                <p>If you use it without anything inside (<code class="language-java">System.out.println("");</code>), it simply prints an empty line.
+                  <br> Similar to Python's <code class="language-python">print()</code> statement.
+                  It’s how your program "talks" to you!</p>
+                  <hr>
+                <!--
+                
+                <h3>Why Does Java Need So Much Boilerplate?</h3>
+                <p>Java’s structure is designed for larger projects:</p>
+                <ul>
+                    <li>It’s a statically typed, compiled language, so everything must be explicitly defined.</li>
+                    <li>The structure helps organize code better and catch errors earlier.</li>
+                </ul>
+
+                <p>Practice writing this structure a few times, and soon it’ll feel like second nature! 😊</p>
+            </div>
+            -->
+            <h3>Comments in Java</h3><br>
+            <ol>
+              <strong><li>Single-line Comments</li></strong>
+              <pre><code class="language-java">
+// This prints "Hello, World!" to the console
+System.out.println("Hello, World!"); // A comment can also go here
+              </code></pre>
+              <br>
+              <strong><li>Multi-line Comments</li></strong>
+              <pre><code class="language-java">
+/*
+This is a multi-line comment.
+This is how a multi-line comment is written in Java.
+*/
+                              </code></pre>
+            </ul>
+            <hr>
+            <!-- Programming Exercise -->
+            <h1 class="mb-4">First Programming Exercise</h1>
+            <div class="accordion" id="exerciseAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="exerciseHeading">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exerciseContent" aria-expanded="true" aria-controls="exerciseContent">
+                            <h5>Print Your Name</h5>
+                        </button>
+                    </h2>
+                <div id="exerciseContent" class="accordion-collapse collapse show" aria-labelledby="exerciseHeading" data-bs-parent="#exerciseAccordion">
+                    <div class="accordion-body">
+                        <p>Welcome to your first programming exercise! The goal of this exercise is to write a program that <strong>prints your name.</strong> 
+                          <br>This first exercise gives you a hands-on feel for writing a complete Java program. By modifying a simple example, you'll understand the basics of Java syntax. </p>
+                        <p><strong>Instructions:</strong></p>
+                        <ul>
+                            <li>Write your first program in Java</li>
+                            <li>Modify <code class="language-java">System.out.println("Hello, World!")</code> statement to display your name instead.</li>
+                            <li>Ensure your output <strong>only</strong> contains your name, like this: <br> <code class="language-java">Sabah Naurin</code></li>
+                        </ul>
+                        <p>When you're ready, click the button below to complete the exercise on a separate page:</p>
+                        <a href="progExercise1.html" class="btn btn-primary" target="_blank">Go to Exercise</a>
+                    </div>
+                </div>
+                </div>
+                <br>
+                <a href="variable.html">Datatypes & Variables →</a>
+            </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!--Bootstrap JavaScript-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Prism.js JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

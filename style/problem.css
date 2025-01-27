@@ -1,3 +1,6 @@
+label {
+    padding-bottom: 5px;
+}
 /* General Styling for Problem Container */
 .problem-container {
     width: 90%;
@@ -39,20 +42,37 @@
     overflow: hidden;
 }
 
-/* Submission Button */
+/* Align Test and Submit Buttons Side by Side */
+.button-container {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 20px; /* Add spacing above the buttons */
+}
+
+button#test-code,
 button#submit-code {
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
     font-size: 1rem;
+    border-radius: 5px;
+    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin: auto;
+}
+
+button#test-code {
+    background-color: #6c757d; /* Secondary button color */
+    color: #fff;
+}
+
+button#test-code:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+button#submit-code {
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
 }
 
 button#submit-code:hover {
@@ -60,12 +80,12 @@ button#submit-code:hover {
     transform: translateY(-2px);
 }
 
-button#submit-code:active {
+button#submit-code:active, button#test-code:active {
     transform: translateY(0);
 }
 
 /* Feedback Message Styling */
-#result-message {
+#result-message, #test-output {
     margin-top: 20px;
     padding: 10px;
     font-size: 1rem;
