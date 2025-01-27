@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print a Short Story</title>
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style/problem.css">
+
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="problem-container">
+        <!-- Go Back Button -->
+        <a href="boilerplate.html" class="btn btn-secondary go-back-btn">Go Back</a>
+
+        <!-- Problem Title -->
+        <h2><strong>Print a Short Story</strong></h2>
+
+        <!-- Problem Description -->
+        <p>Write a Java program that prints a short story in three separate lines.</p>
+        <h5>Instructions:</h5>
+        <ul>
+            <li>Use the statement <code>System.out.println("text")</code> to display the story.</li>
+            <li>Ensure your output follows the format:</li>
+            <pre>
+Once upon a time
+There was a dog.
+He was a good boy.
+            </pre>
+            <li>Remember, the <code>System.out.println()</code> statement automatically inserts a line break.</li>
+        </ul>
+
+        <!-- Code Editor Placeholder -->
+        <div id="editor"></div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button id="test-code">Test Code</button>
+            <button id="submit-code">Submit Code</button>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-message"></div>
+    </div>
+    
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/clike/clike.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/progex1_1.js"></script>
+</body>
+</html>

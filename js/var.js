@@ -52,3 +52,51 @@ async function executeCode(exampleId, exampleOutput) {
         console.error("Element with ID", exampleId, "not found.");
     }
 }
+
+
+// Function to send a request to the Piston API
+async function runPythonCode(pythonCode) {
+    try {
+        // Prepare the request body
+        const requestBody = {
+            language: "python",
+            version: "3.10.0", // Specify the Python version
+            files: [
+                {
+                    name: "main.py",
+                    content: pythonCode,
+                },
+            ],
+        };
+
+        // Send the POST request
+        const response = await fetch(PISTON_API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+        });
+
+        // Parse the response
+        const result = await response.json();
+
+        // Return output or error
+        return result.run.stdout || result.run.stderr;
+    } catch (error) {
+        console.error("Error running code:", error);
+        return "An error occurred while executing the code.";
+    }
+}
+
+// Function to fetch code from <pre><code> and display the output
+async function executePythonCode(exampleId, exampleOutput) {
+    const codeElement = document.getElementById(exampleId); // Get code element by ID
+    if (codeElement) {
+        const pythonCode = codeElement.innerText.trim(); // Extract code text
+        const output = await runPythonCode(pythonCode); // Execute code via Piston API
+        document.getElementById(exampleOutput).innerText = output; // Display output
+    } else {
+        console.error("Code element with ID", exampleId, "not found.");
+    }
+}

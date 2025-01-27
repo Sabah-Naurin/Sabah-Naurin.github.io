@@ -19,6 +19,32 @@ editor.on("change", () => {
     localStorage.setItem("userCode", userCode);
 });
 
+// Utility function to validate variable declarations and usage
+function validateVariables(studentCode) {
+    const stringVarPattern = /String\s+(\w+)\s*=\s*".*";/g;
+    const intVarPattern = /int\s+(\w+)\s*=\s*\d+;/g;
+    const printPattern = /System\.out\.println\("Hello, I am "\s*\+\s*(\w+)\s*\+\s*"\. My ID is "\s*\+\s*(\w+)\s*\+\s*"\. My department is "\s*\+\s*(\w+)\s*\+\s*"\."\);/;
+
+    // Extract variable declarations
+    const stringVars = [...studentCode.matchAll(stringVarPattern)].map(match => match[1]);
+    const intVars = [...studentCode.matchAll(intVarPattern)].map(match => match[1]);
+
+    // Extract variables used in println
+    const printMatch = studentCode.match(printPattern);
+
+    if (!printMatch) {
+        return { valid: false, error: "The `System.out.println` statement is missing or incorrect." };
+    }
+
+    const [_, nameVar, idVar, departmentVar] = printMatch;
+
+    // Ensure variables used in println are declared
+    if (!stringVars.includes(nameVar)) return { valid: false, error: `Variable ${nameVar} (used for name) is not declared correctly.` };
+    if (!intVars.includes(idVar)) return { valid: false, error: `Variable ${idVar} (used for ID) is not declared correctly.` };
+    if (!stringVars.includes(departmentVar)) return { valid: false, error: `Variable ${departmentVar} (used for department) is not declared correctly.` };
+
+    return { valid: true };
+}
 
 // Handle "Test Code" button click
 document.getElementById("test-code").addEventListener("click", async () => {
@@ -82,6 +108,13 @@ document.getElementById("submit-code").addEventListener("click", async () => {
     const idPattern = /^\d{7}$/; // Regex to validate exactly 7 digits
     if (!idPattern.test(studentId)) {
         resultMessage.innerHTML = `<span style="color: red;">Invalid ID! It must be exactly 7 digits.</span>`;
+        return;
+    }
+
+    // Validate variable usage in the code
+    const variableValidation = validateVariables(studentCode);
+    if (!variableValidation.valid) {
+        resultMessage.innerHTML = `<span style="color: red;">${variableValidation.error}</span>`;
         return;
     }
 

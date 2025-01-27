@@ -30,8 +30,11 @@
             <ul class="collapse show" id="dropdownMenu">
               <li><a class="nav-link" href="boilerplate.html" id="boilerplate">Start Here</a></li>
               <li><a class="nav-link active" href="variable.html" id="variable">Datatypes & Variables</a></li>
+              <li><a class="nav-link" href="input_output.html" id="input_output">Taking Input & Output</a></li>
+              <li><a class="nav-link" href="arraylist.html" id="ArrayList">ArrayList</a></li>
               <li><a class="nav-link" href="loops.html" id="loops">Control Flow statements</a></li>
               <li><a class="nav-link" href="methods.html" id="methods">Methods</a></li>
+              <li><a class="nav-link" href="class.html" id="class">Class</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="#" id="javafx">JavaFX</a></li>
@@ -126,24 +129,101 @@
 
                 <h5>b) Non-Primitive or Reference Data Types</h5>
                 <p>These include strings, arrays, and objects. Non-primitive types are more complex and built from primitives. Reference variables don’t store the actual data but store the memory address (reference) of the object they point to.</p>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                      <tr>
+                          <th>Type</th>
+                          <th>Description</th>
+                          <th>Example</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>String</td>
+                          <td>Sequence of characters</td>
+                          <td><code>String name = "Alice";</code></td>
+                      </tr>
+                      <tr>
+                          <td>Array</td>
+                          <td>Collection of values</td>
+                          <td><code>int[] numbers = {1, 2, 3};</code></td>
+                      </tr>
+                      <tr>
+                          <td>Class</td>
+                          <td>Blueprint for objects</td>
+                          <td><code>Student student1 = new Student();</code></td>
+                      </tr>
+                  </tbody>
+              </table>
                 <hr>
+
                 <h3>Declaring Variables</h3>
                 <p>In Java, you declare a variable by specifying its type, followed by its name. You can also assign a value to it when you declare it.</p>
                 
                 <div class="alert alert-info-callout" role="alert"><code>dataType variableName = value;</code></div>
                 
                 <p><strong>Example:</strong></p>
-                <pre><code class="lang-java">
-int age = 20;        // Integer variable
-double salary = 4500.50; // Decimal number
-char grade = 'A';    // Single character
-boolean isJavaFun = true; // True/False value
-String name = "Alice"; // Text
-                </code></pre>
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-java-tab" data-bs-toggle="tab" data-bs-target="#nav-java" type="button" role="tab" aria-controls="nav-java" aria-selected="true">Java</button>
+                    <button class="nav-link" id="nav-python-tab" data-bs-toggle="tab" data-bs-target="#nav-python" type="button" role="tab" aria-controls="nav-python" aria-selected="false">Python</button>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <!-- Java Tab -->
+                  <div class="tab-pane fade show active" id="nav-java" role="tabpanel" aria-labelledby="nav-java-tab">
+                    <pre><code class="lang-java" id="ex0">
+class VariableExample {
+  public static void main(String[] args) {
+      int age = 20;        // Integer variable
+      double salary = 4500.50; // Decimal number
+      char grade = 'A';    // Single character
+      boolean isJavaFun = true; // True/False value
+      String name = "Alice"; // Text
+
+      System.out.println(name.getClass());
+  }
+}
+                    </code></pre><br>
+                    <button class="btn btn-primary" onclick="executeCode('ex0','out0')">Run Example</button>
+                    <h5><br>Output:</h5>
+                    <pre id="out0"></pre>
+
+                  </div>
+                  <!-- Python Tab -->
+                  <div class="tab-pane fade" id="nav-python" role="tabpanel" aria-labelledby="nav-python-tab">
+                    <pre><code class="language-python" id="py_ex0">
+age = 20
+salary = 4500.50
+grade = 'A'
+isJavaFun = True 
+name = 'Alice'
+
+print(type(age))
+print(type(salary))
+print(type(grade))
+print(type(isJavaFun))
+print(type(name))
+                    </code></pre><br>
+                    <button class="btn btn-primary" onclick="executePythonCode('py_ex0','out_py0')">Run Example</button>
+                    <h5><br>Output:</h5>
+                    <pre id="out_py0"></pre>
+                  </div>
+
+                  <div class="alert alert-info-callout" role="alert">
+                    <p>In Java, <strong>primitive variables</strong> (like <code>int, float, boolean</code>) are not objects and do not belong to any class.
+                    Hence we can't call <code>varName.getClass()</code> on them.They are simple, low-level data types used to store values directly in memory.
+                    </p>
+                    <p>In Python, <strong>everything is an object</strong>, even basic data types like integers, floats, and booleans.
+Each variable belongs to a class (e.g., int, float, str), and you can call methods on them.</p>
+                  </div>
+
+                  <div class="alert alert-info" role="alert">
+                    <p>In Java, <strong>wrapper classes</strong> are used to convert <strong>primitive data types</strong> (like <code>int, float, boolean</code>) into <strong>objects</strong>. Every primitive type has a corresponding wrapper class in Java.
+                    (e.g., <code>int → Integer</code>, <code>char → Character</code>). We will learn more about those later.</p>
+                  </div>
             <hr>    
 
-
-            
             <h3>Examples of Using Variables</h3>
             <p><strong>Example 1: Declaring and Printing Variables</strong></p>
             <pre><code class="lang-java" id="ex1">
@@ -167,8 +247,7 @@ public class VariablesExample {
             <button class="btn btn-primary" onclick="executeCode('ex1','out1')">Run Example</button>
             <h5><br>Output:</h5>
             <pre id="out1"></pre>
-            
-            <h3>Examples of Using Variables</h3>
+
             <p><strong>Example 2: Arithmetic Operations with Variables</strong></p>
             <pre><code class="lang-java" id="ex2">
 public class ArithmeticExample {
@@ -187,6 +266,26 @@ public class ArithmeticExample {
             <button class="btn btn-primary" onclick="executeCode('ex2','out2')">Run Example</button>
             <h5><br>Output:</h5>
             <pre id="out2"></pre>
+            <hr>
+            
+            <h3>Java CamelCase Naming Convention</h3>
+            <p>Java follows the <strong>camelCase</strong> naming convention to improve code readability and maintain consistency. Here’s how it works:</p>
+            <ol>
+              <strong><li>Variables and Methods: Use lower camelCase.</li></strong>
+              <ul>
+                <li>The first word starts with a lowercase letter.</li>
+                <li>Each subsequent word starts with an uppercase letter.</li>
+                <li>Example: <code>studentName, calculateSum</code>.</li>
+              </ul>
+              <br>
+              <strong><li>Classes: Use UpperCamelCase.</li></strong>
+              <ul>
+                <li>Every word starts with an uppercase letter.</li>
+                <li>Example: <code>StudentDetails, MathHelper.</code></li>
+              </ul>
+            </ol>
+            <p>You should follow this naming convention in your Java code as well to it organized and easier to understand.</p>
+            <hr>
 
             <h3>Variable Rules</h3>
             <ul>
@@ -239,7 +338,7 @@ int 2ndNumber = 5;  // Error: Variable name cannot start with a digit
                         <ul>
                             <li>Create three variables with appropriate datatypes to store your name, ID and department.</li>
                             <li>Modify <code class="language-java">System.out.println("Hello, World!")</code> statement to display these information in the way below:
-                            <br> <code>Hello, I am (your name). My ID is (your ID). And my department is (your department).</code></li>
+                            <br> <code>Hello, I am (your name). My ID is (your ID). My department is (your department).</code></li>
                             <li>You may use the following template to modify:<br>
                             <pre><code class="lang-java">
 System.out.println("Hello, I am " + name + ". My ID is " + id + ". My department is " + department + ".");
@@ -250,6 +349,8 @@ System.out.println("Hello, I am " + name + ". My ID is " + id + ". My department
                     </div>
                 </div>
                 </div>
+                <br>
+                <a href="input_output.html">Taking Input & Output →</a>
           </div>
       </div>
       </main>
